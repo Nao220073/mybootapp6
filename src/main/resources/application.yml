@@ -1,4 +1,3 @@
-spring.application.name=mybootapp6
 spring: 
   mvc: 
     view: 
