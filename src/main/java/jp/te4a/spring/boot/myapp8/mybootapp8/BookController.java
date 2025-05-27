@@ -31,8 +31,7 @@ public class BookController {
     @PostMapping(path="create")
         String create(BookForm form, Model model) {
             bookService.create(form);
-            //return "redirect:/books";
-            return list(model);
+            return "redirect:/books";
     }
     //編集フォーム表示
     @PostMapping(path = "edit", params = "form")
