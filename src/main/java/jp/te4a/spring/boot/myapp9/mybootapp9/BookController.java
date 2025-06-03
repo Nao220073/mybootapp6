@@ -30,7 +30,7 @@ public class BookController {
     //書籍作成
     @PostMapping(path="create")
         String create(BookForm form, Model model) {
-            bookService.create(form);
+            bookService.save(form);
             return "redirect:/books";
     }
     //編集フォーム表示
@@ -43,7 +43,7 @@ public class BookController {
     //書籍更新
     @PostMapping(path = "edit")
     String edit(@RequestParam Integer id, BookForm form) {
-        bookService.update(form);
+        bookService.save(form);
         return "redirect:/books";
     }
     //書籍削除
