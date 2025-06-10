@@ -8,10 +8,10 @@
 		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>jp.te4a.spring.boot.myapp9</groupId>
-	<artifactId>mybootapp9</artifactId>
+	<groupId>jp.te4a.spring.boot.myapp11</groupId>
+	<artifactId>mybootapp11</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mybootapp9</name>
+	<name>mybootapp11</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
