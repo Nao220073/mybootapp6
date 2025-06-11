@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.ui.Model; 
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated; 
 
 @Controller
 @RequestMapping("books")
@@ -29,7 +31,10 @@ public class BookController {
     }
     //書籍作成
     @PostMapping(path="create")
-        String create(BookForm form, Model model) {
+        String create(@Validated BookForm form, BindingResult result, Model model) {
+            if(result.hasErrors()){
+                return list(model);
+            }
             bookService.save(form);
             return "redirect:/books";
     }
@@ -42,7 +47,10 @@ public class BookController {
     }
     //書籍更新
     @PostMapping(path = "edit")
-    String edit(@RequestParam Integer id, BookForm form) {
+    String edit(@RequestParam Integer id, @Validated BookForm form, BindingResult result) {
+        if(result.hasErrors()){
+            return editForm(id, form);
+        }
         bookService.save(form);
         return "redirect:/books";
     }
